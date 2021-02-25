@@ -1,0 +1,184 @@
+/* BUTTONS */
+.open {
+    text-align: right;
+    margin-top: -3rem;
+    padding-bottom: 1rem;
+
+    @include respond(phone) {
+        font-size: .7rem;
+    }
+}
+
+.pages {
+    margin-top: -3rem;
+}
+
+.sv, .en {
+    &:link,
+    &:visited {
+       text-transform: uppercase;
+       text-decoration: none;
+       display: inline-block;
+       border-radius: 15rem;
+       transition: all .2s;
+       position: relative;
+       font-size: $default-font-size;
+       color: $color-black;
+       margin: 1rem;
+    }
+
+    &:hover {
+        transform: translateY(-2px);
+        text-shadow: .2rem .1rem .2rem rgba($color-black, .1)
+    }
+}
+
+
+.btn {
+    &:link,
+    &:visited {
+       text-transform: uppercase;
+       text-decoration: none;
+       padding: 1.5rem 4rem;
+       display: inline-block;
+       border-radius: 15rem;
+       transition: all .2s;
+       position: relative;
+       font-size: $default-font-size;
+
+       @include respond(tab-port) {
+        padding: 1rem 2rem;
+        margin: 0 .5rem 2rem .5rem;
+        font-size: 1.5rem;
+       }
+
+    
+    }
+    
+    &:hover {
+        transform: translateY(-.3rem);
+        box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+    
+        &::after {
+            transform: scaleX(1.2) scaleY(1.4);
+            opacity: 0;
+        }
+    }
+    
+    &:active {
+        transform: translateY(-.1rem);
+         -moz-box-shadow: inset 0 0 .4rem rgba($color-black, 1);
+         -webkit-box-shadow: inset 0 0 .4rem rgba($color-black, 1);
+        box-shadow: inset 0 0 .4rem rgba($color-black, 1);
+    }
+    
+    &--white {
+        background-color: $color-white;
+        color: $color-grey-dark;
+    
+        &::after {
+            background-color: $color-white;
+        }
+    }
+
+    &--green {
+        background-color: $color-green1;
+        color: $color-white;
+
+        @include respond(phone) {
+            margin: 0;
+           }
+    
+        &::after {
+            background-color: $color-white;
+        }
+    }
+
+    &--blue {
+        background-color: $color-primary-light;
+        color: $color-white;
+        text-transform: uppercase;
+       text-decoration: none;
+       padding: 1.5rem 4rem;
+       display: inline-block;
+       border-radius: 15rem;
+       border:none;
+       transition: all .2s;
+       position: relative;
+       font-size: $default-font-size;
+       margin-top: 2rem;
+    
+        &::after {
+            background-color: $color-white;
+        }
+    }
+    
+    &::after {
+        content: "";
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        border-radius: 15rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all .4s;
+    }
+    
+    &--animated {
+        animation: moveInBottom 1s ease-out .75s;
+        animation-fill-mode: backwards;
+    }
+    
+    }
+
+    .btn-text {
+        &:link,
+        &:visited {
+            font-size: $default-font-size;
+            color: $color-primary-light;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: .2rem;
+            display: inline-block;
+            text-decoration: none;
+            border-bottom: 2px solid $color-primary-light;
+            padding: 1rem 2rem;
+            transition: all .2s;
+        }
+
+        &:hover {
+           background-color: $color-primary-light;
+           color: $color-white;
+           box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+           transform: translateY(-2px);
+        }
+
+        &:active {
+            box-shadow: 0 .5rem 1rem rgba($color-black, 0.2);
+            transform: translateY(0);
+        }
+    }
+
+    // scroll to top
+    #myBtn {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        right: 30px;
+        z-index: 99;
+        font-size: 30px;
+        border: none;
+        outline: none;
+        background-color: $color-primary-light;
+        color: white;
+        cursor: pointer;
+        padding: 10px 20px 10px 20px;
+        margin: 20px;
+        border-radius: 50px;
+      }
+      
+      #myBtn:hover {
+        background-color: #555;
+      }

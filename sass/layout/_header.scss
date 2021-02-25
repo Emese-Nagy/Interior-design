@@ -1,0 +1,56 @@
+/* HEADER -HERO IMAGE SECTION */
+.header {
+    height: 95vh;
+    background-image: linear-gradient(to top,
+     rgba($color-primary-light, 0.3),
+     rgba($color-primary-dark, 0.3)),
+     url(../img/header-image.png);
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    position: relative;
+    
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+    @include respond(phone) {
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+    }
+
+    &__logo-box {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+
+    &--logo-text {
+        color: $color-grey-light-1;
+        font-size: 2rem;
+        text-transform: uppercase;
+        font-family: 'Playfair Display';
+        outline: 1px dotted $color-grey-light-1;
+        outline-offset: 8px;
+    }
+
+    &--text {
+        text-decoration: none;
+    }
+    }
+
+    &__logo {
+        height: 4rem;
+    }
+
+    &__text-box {
+    position: absolute;
+    top: 45%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+    & a {
+        text-decoration: none;
+    }
+    }
+
+}
